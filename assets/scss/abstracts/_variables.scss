@@ -1,0 +1,52 @@
+// My defined colors
+$color-black: #000;
+
+$color-primary: #55c57a;
+$color-secondary: #ffb900;
+$color-tertiary: #2998ff;
+$color-quaternary: #5643fa;
+$color-primary-light: #7ed56f;
+$color-primary-lighter: #b2f2b2;
+$color-primary-dark: #28b485;
+$color-secondary-darker: #ffb900;
+
+$background-primary: #55c57a;
+$background-secondary: #ffb900;
+$background-tertiary: #2998ff;
+$background-quaternary: #5643fa;
+
+$border-primary: #55c57a;
+$border-secondary: #ffb900;
+
+$color-light-text: #7ed56f;
+$color-light-text-muted: #b2f2b2;
+$color-secondary-text: #ffb900;
+$color-secondary-text-muted: #ffb900;
+
+$white: #fff;
+$grey-100:#e6e6e6;
+$grey-200: #cccccc;
+$grey-300: #b3b3b3;
+$grey-400: #999999;
+$grey-500: grey;
+$grey-600: #666666;
+$grey-700: #4d4d4d;
+$grey-800: #333333;
+$grey-900: #1a1a1a;
+$black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+
+//=============>>>>>> COLOR ASSIGNMENTS <<<<<<=============//
+body{
+    --color-grey: #{$grey-500};
+}
