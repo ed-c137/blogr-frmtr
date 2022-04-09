@@ -6,6 +6,89 @@
     box-sizing: inherit;
 }
 
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,  pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section{ 
+    display:block;
+}
+
+nav ul {
+   list-style:none;
+}
+
+blockquote, q {
+   quotes:none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+   content:'';
+   content:none;
+}
+
+a {
+   margin:0;
+   padding:0;
+   font-size:100%;
+   vertical-align:baseline;
+   background:transparent;
+   text-decoration: none;
+}
+
+/* change colors to suit your needs */
+ins {
+   background-color:#ff9;
+   color:#000;
+   text-decoration:none;
+}
+
+/* change colors to suit your needs */
+mark {
+   background-color:#ff9;
+   color:#000; 
+   font-style:italic;
+   font-weight:bold;
+}
+
+del {
+   text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+   border-bottom:1px dotted;
+   cursor:help;
+}
+
+table {
+   border-collapse:collapse;
+   border-spacing:0;
+}
+
+/* change border color to suit your needs */
+hr {
+   display:block;
+   height:1px;
+   border:0;   
+   border-top:1px solid #cccccc;
+   margin:1em 0;
+   padding:0;
+}
+
+input, select {
+   vertical-align:middle;
+}
+
 ul{
     li{
     list-style-type: none;
@@ -16,29 +99,28 @@ html {
     // This defines what 1rem is
     font-size: 16px;
 
-    @include respond(tab-land){
-        font-size: 56.25%;
+    @include for-phone-only{
+        font-size: 70%;
     }
-    @include respond(tab-port){
-        font-size: 50%;
+    @include for-tablet-portrait-only{
+        font-size: 80%;
     }
-    @include respond(tab-land){
-        font-size: 56.25%;
+    @include for-tablet-landscape-only{
+        font-size: 80%;
     }
-    @include respond(big-desktop){
-        font-size: 75%;
+    @include for-desktop-up{
+        font-size: 100%;
     }
 }
 
+
+
+
 body.body-wrapper {
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    // padding: 3rem;
-    // @include respond(tab-port){
-    //     padding: 0;
-    // }
-
+    font-family: 'Roboto', sans-serif;
 }
 
 .theme-container{
@@ -46,16 +128,17 @@ body.body-wrapper {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%;
+    background: v(app-background);
     header{
-        background: deeppink;
+        // background: deeppink;
        
     }
     .content-main{
-        background: rgb(39, 204, 56);
         color: #444;
         
     }
     footer{
-        background: purple;
+        background: rgb(110, 110, 110);
+        height: 3rem;
     }
 }

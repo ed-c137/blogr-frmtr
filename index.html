@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="meta tags, meta description, meta keywords, SEO, search engine optimization">
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon-icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body class="body-wrapper">
     <div class="theme-container">
-            <header id="site-header">
-                <div class="navbar container">
+            <header id="site-header" class="header--dark">
+                <div class="navbar container ">
                     <div class="navbar__logo">
                         <a href="/">
                             <span>Brand</span>
@@ -29,10 +37,6 @@
                                     <span class="icon d-none"></span><span>About</span>
                                 </a>
                             </li>
-                            <li class="navbar__nav-item">
-                                <a href="">
-                                    <span class="icon d-none"></span><span>Contact</span>
-                                </a>
                             </li>
                             <li class="navbar__nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -49,15 +53,26 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="navbar__nav-item">
+                                <a href="">
+                                    <span class="icon d-none"></span><span>Contact</span>
+                                </a>
                         </ul>
-                        <button class="navbar__nav-menutoggle d-lg-none" type="button"   aria-controls="collapsibleNavId"
+                        <div class="navbar__nav-menuicon">
+                        <button class="navbar__nav-menu js-menu-togle d-none-md" type="button"   aria-controls="collapsibleNavId"
                             aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="20" height="20"
+                            viewBox="0 0 172 172"
+                            style=" fill:currentColor"><g transform="translate(-6.02,-6.02) scale(1.07,1.07)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#000000"><path d="M17.2,40.13333c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h137.6c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843zM17.2,80.26667c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h137.6c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843zM17.2,120.4c-2.06765,-0.02924 -3.99087,1.05709 -5.03322,2.843c-1.04236,1.78592 -1.04236,3.99474 0,5.78066c1.04236,1.78592 2.96558,2.87225 5.03322,2.843h137.6c2.06765,0.02924 3.99087,-1.05709 5.03322,-2.843c1.04236,-1.78592 1.04236,-3.99474 0,-5.78066c-1.04236,-1.78592 -2.96558,-2.87225 -5.03322,-2.843z"></path></g></g></g></svg>
                         </button>
-                        <form class="navbar__nav-search">
-                            <input class="form-control" type="text" placeholder="Search">
-                            <button class="btn" type="submit">Search</button>
-                        </form>
+                        </div>
+                        <div class="navbar__nav-search d-none-sm">
+                            <form>
+                                <input class="form-control" type="text" placeholder="Search">
+                                <button class="btn" type="submit">Search</button>
+                            </form>
+                        </div>
                     </nav>
                 </div>
             </header>
@@ -79,5 +94,8 @@
             </div>
         </footer>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

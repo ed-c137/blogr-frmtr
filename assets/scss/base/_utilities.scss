@@ -21,15 +21,76 @@
 .u-margin-top-huge { margin-top: 10rem !important; }
 
 //generate utility colors from dark to light 
-// $color: grey;
-// @for $i from 20 through 100 {
-//     @if $i % 10 == 0 {
-//       $percentage: $i*1%;
-//       .#{$color}-#{$i} {
-//         background-color: mix(black, $color, $percentage);
+// $color: rgb(141, 3, 3);
+// $color-name: 'grey';
+
+
+$allcolors: (
+    "orange":    orange,
+    "green":   green,
+);
+@each $color-name, $color in $allcolors {
+    @for $i from 10 through 100 {
+        @if $i % 10 == 0 {
+          $percentage: $i*1%;
+          @if $i < 50{
+            $k : 50 - $i;//change the first value to lighten the whites i.e between 50 to 80
+            $kper : $k * 1%;
+            .#{$color-name}-#{$i} {
+                 background-color: mix(white, $color, $kper);
+            } 
+        } @else if $i == 50{
+            .#{$color-name}-#{$i} {
+                background-color: $color;
+            }
+        }@else if $i > 50{
+          $b : $i - 35;//change the second value to darken the blacks i.e between 20 to 50
+          $bper : $b * 1%;
+            .#{$color-name}-#{$i} {
+              background-color: mix(black, $color, $bper);
+            }
+    
+            }
+        }
+      }
+}
+
+//Generate text colors
+// @each $color-name, $color in $allcolors {
+//     @for $i from 10 through 100 {
+//         @if $i % 10 == 0 {
+//           $percentage: $i*1%;
+//           @if $i < 50{
+//             $k : 50 - $i;//change the first value to lighten the whites i.e between 50 to 80
+//             $kper : $k * 1%;
+//             .#{$color-name}-text-#{$i} {
+//                  color: mix(white, $color, $kper);
+//             } 
+//         } @else if $i == 50{
+//             .#{$color-name}-text-#{$i} {
+//                 color: $color;
+//             }
+//         }@else if $i > 50{
+//           $b : $i - 35;//change the second value to darken the blacks i.e between 20 to 50
+//           $bper : $b * 1%;
+//             .#{$color-name}-text-#{$i} {
+//               color: mix(black, $color, $bper);
+//             }
+    
+//             }
+//         }
 //       }
-//       .#{$color}-#{$i} {
-//         background-color: mix(white, $color, $percentage);
-//       }
-//     }
-//   }
+// }
+
+
+.d-none-sm { 
+    @include for-phone-only{
+        display: none !important;
+    }
+ }
+
+ .d-none-md{
+    @include for-tablet-portrait-up{
+        display: none !important;
+    }
+ }

@@ -588,6 +588,18 @@ p {
         }
     }
 
+ 
+
+@mixin gencolors($allcolors) {
+  @each $color-name, $color in $allcolors {
+    --color-#{$color-name}-lightest: #{mix(white, $color, 30%)};
+    --color-#{$color-name}-lighter: #{mix(white, $color, 10%)};
+    --color-#{$color-name}-darker: #{mix(black, $color, 10%)};
+    --color-#{$color-name}-darkest: #{mix(black, $color, 30%)};
+  }
+}
+
+
 
 // Another format for generating media queries:
 // $breakpoints: (

@@ -89,3 +89,173 @@
 //         animation-fill-mode: backwards;
 //     }
 // }
+
+header#site-header{
+    height: $site-header-height;
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        .navbar__logo{
+            @include flex-center;
+        }
+        .navbar__nav{
+
+        }
+    }
+
+}
+.header--dark{
+    background-color:v(grey-700);
+    color: v(grey-200);
+    a{
+        color: v(grey-200);
+    }
+    // .navbar__logo{
+    //     color: v(grey-200);
+    // }
+    // .navbar__nav{
+    //     .navbar__nav-item{
+    //         color: v(grey-200);
+    //     }
+    // }
+}
+.navbar__nav{
+    display: flex;
+    
+    &-list{
+        display: flex;
+        position: absolute;
+        top: $site-header-height;
+        left: 0;
+        width: 100%;
+        background: v(grey-300);
+        // background: $menu-background;
+        flex-direction: column;
+        max-height: 0px;//set to close and open menu
+        transition: all .2s ;
+        // height: 0px;
+        overflow: hidden;
+        .navbar__nav-item{
+            padding: 0.8rem .5rem;
+            @include flex-center;
+            @include for-phone-only{
+                &:not(:last-child){
+                    border-bottom: 1px solid v(grey-400);
+                }
+            }
+            
+            >a{
+            //   color: v(grey-700);
+                @include flex-center;
+            }
+        }
+        
+        .dropdown{
+            flex-direction: column;
+            padding: 0;
+            transition: all .2s;
+            >a{
+                 &::after{ content:  ' ▼'; }
+                padding: .8rem .5rem;
+              
+            }
+            .dropdown__menu{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                overflow: hidden;
+                max-height: 0;
+                transition: all .2s;
+                &-item{
+                    padding: 0.8rem .5rem;
+                    >a{
+                        height: 100%;
+                        width: 100%;
+                        text-align: center;
+                        display: inline-block;
+                        color: v(grey-700);
+                    }
+                    
+                    &:not(:last-child){
+                        border-bottom: 1px solid v(grey-400);
+                    }
+
+                }
+            }
+        }
+        .dropdown--open{
+            .dropdown__menu{
+                max-height: 200px;
+                overflow: auto;
+            }
+            >a{
+                border-bottom: 1px solid var(--grey-400);
+            }
+        }
+
+        @include for-tablet-portrait-up{
+            background: transparent;
+            flex-direction: row;
+            max-height: 100px;
+            overflow: visible;
+            position: relative;
+            width: initial;
+            top: 0;
+            .navbar__nav-item{
+                border: none;
+            }
+            .dropdown{
+                >a{
+                    border:none;
+                }
+                .dropdown__menu{
+                    position: absolute;
+                    top: 3rem;
+                    z-index: 1;
+                    background: v(grey-300);
+                    &-item{
+                        &:hover{
+                            background: v(grey-400);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-list--open{
+        max-height: 300px;
+    }
+    &-menuicon{
+        @include flex-center;
+
+        .navbar__nav-menu{
+            height: 24px;
+            width: 24px;
+            border-radius: 0;
+            border: 0;
+            position: relative;
+            cursor: pointer;
+            svg{
+                @include absCenter;
+            }
+        }
+    }
+    &-search{
+        @include flex-center;
+        form{
+            --padding: 0.2rem;
+            display: flex;
+            input{
+                border: none;
+                padding: v(padding);
+            }
+            button{
+                border: none;
+                padding: v(padding);
+            }
+        }
+    }
+    
+}
