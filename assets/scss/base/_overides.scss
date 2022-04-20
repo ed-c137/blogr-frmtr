@@ -32,10 +32,18 @@ $grid-breakpoints: (
   xxl: 1800px
 );
 
+// $container-max-widths: (
+//   sm: 562.5px,
+//   md: 720px,
+//   lg: 843.75px,
+//   xl: 1125px,
+//   xxl: 1687.5px
+// );
+
 $container-max-widths: (
-  sm: 562.5px,
-  md: 720px,
-  lg: 843.75px,
-  xl: 1125px,
-  xxl: 1687.5px
+  sm: 540px,
+  md: 620px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
 );
